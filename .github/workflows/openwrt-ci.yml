@@ -69,6 +69,9 @@ jobs:
           sudo apt-get install -y build-essential clang flex bison gawk gcc-multilib g++-multilib \
           gettext git libncurses5-dev libssl-dev python3 python3-distutils rsync \
           subversion swig time unzip wget zlib1g-dev file ccache
+          # Install po2lmo
+          git clone https://github.com/openwrt-dev/po2lmo.git
+          cd po2lmo && make && sudo cp po2lmo /usr/bin/    
           # 根据你的 OpenWrt 版本和自定义需求，可能还需要其他包，务必确保 gettext 已安装
 
       - name: Update feeds
